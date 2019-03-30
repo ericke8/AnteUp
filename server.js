@@ -21,6 +21,10 @@ function handleBet(req, res) {
     res.sendFile(path.join(__dirname + '/src/bet.html'));
 }
 
+function handleFunds(req, res) {
+    res.sendFile(path.join(__dirname + '/src/manage_funds.html'));
+}
+
 function handleList(req, res) {
     res.sendFile(path.join(__dirname + '/src/list.html'));
 }
@@ -51,4 +55,5 @@ app.get('/bet', handleBet);
 app.get('/list', handleList);
 app.get('/get-list', handleGetList);
 app.get('/get-bet', handleGetBet);
+app.get('/funds', handleFunds);
 app.listen(port, () => console.log(`Example app listening on port ${port}...`));
