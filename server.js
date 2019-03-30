@@ -13,7 +13,7 @@ function handleBet(req, res) {
 }
 
 function handleList(req, res) {
-    res.sendFile(path.join(__dirname + '/src/list.html'))
+    res.sendFile(path.join(__dirname + '/src/list.html'));
 }
 
 app.get('/', handleRoot);
