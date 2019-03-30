@@ -1,5 +1,6 @@
 $(document).ready(function() {
     countDown("Jan 5, 2021 15:37:25");
+    getMoney(20, 8, 9);
 });
 
 function countDown(time) {
@@ -31,4 +32,14 @@ var x = setInterval(function() {
     document.getElementById("countdown").innerHTML = "EXPIRED";
   }
 }, 1000);
+}
+
+function getMoney(totalAmount, yesPeople, noPeople) {
+  let amount = 0;
+  if (yesPeople > noPeople) {
+    amount = Math.floor(totalAmount/noPeople * 100) / 100;
+  } else {
+    amount = Math.floor(totalAmount/yesPeople * 100) / 100;
+  }
+  $('#money').text('$' + amount);
 }
