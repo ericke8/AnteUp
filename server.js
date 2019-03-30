@@ -8,5 +8,10 @@ function handleRoot(req, res) {
     res.sendFile(path.join(__dirname + '/src/index.html'));
 }
 
+function handleBet(req, res) {
+    res.sendFile(path.join(__dirname + '/src/bet.html'));
+}
+
 app.get('/', handleRoot);
+app.get('/bet', handleBet);
 app.listen(port, () => console.log(`Example app listening on port ${port}...`));

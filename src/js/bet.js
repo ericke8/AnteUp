@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    let discription = getQueryVariable('category');
+    $('#discription').text(discription);
     countDown("Jan 5, 2021 15:37:25");
     getMoney(20, 9, 10);
 
@@ -13,6 +15,16 @@ $(document).ready(function() {
       $('#choice').text("You chose NAY");
     });
 });
+
+function getQueryVariable(variable) {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
 
 function countDown(time) {
 // Set the date we're counting down to
