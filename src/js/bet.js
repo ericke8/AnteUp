@@ -1,8 +1,22 @@
 $(document).ready(function() {
-    let discription = getQueryVariable('category');
-    $('#discription').text(discription);
-    countDown("Jan 5, 2021 15:37:25");
-    getMoney(20, 9, 10);
+  let category = getQueryVariable('category')
+  let event = getQueryVariable('event');
+  let question = getQueryVariable('question');
+  $.ajax({
+    type: "GET",
+    url: "http://127.0.0.1:3000/get-bet?category=" + category + "&event=" + event + "&question=" + question,
+    success: function(result) {
+        console.log(result);
+        let discription = getQueryVariable('category').replace(/%20/g, " ");
+        $('#discription').text(discription);
+        countDown(result.expiration);
+        getMoney(parseInt(result.yes) + parseInt(result.no), parseInt(result.yes), parseInt(result.no));
+        let eventName = getQueryVariable('event').replace(/%20/g, " ");
+        $('#event').text(eventName);
+        let questionName = getQueryVariable('question').replace(/%20/g, " ");
+        $('#question').text(questionName);
+    }
+});
 
     $('#yes').click( function() {
       this.style.display = 'none';
