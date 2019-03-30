@@ -1,0 +1,19 @@
+.navbar-top-brand-login {
+    width:100%;
+    display:inline-block;
+    overflow: inherit;
+    white-space: nowrap;
+    margin:0px auto;
+}
+
+.carousel-inner > .carousel-item > img {
+    margin: 0 auto;
+    width:auto; height:640px;
+    overflow: hidden;
+}
+
+.carousel-inner > .carousel-item-active > img {
+    margin: 0 auto;
+    width:auto; height:640px;
+    overflow: hidden;
+}
