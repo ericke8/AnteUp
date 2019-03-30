@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
             <meta charset="utf-8">
@@ -9,7 +9,8 @@
         
             <meta name="description" content="Low stakes betting for sports, tv shows, and more!">
             <meta name="author" content="LA Hacks 2019 Project!">
-        
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="js/list.js"></script>
             <link href="css/bootstrap.min.css" rel="stylesheet">
             <link href="css/list.css" rel="stylesheet">
     </head>
@@ -85,14 +86,10 @@
                     </div>
 
                     <div>
-                        <h1 class="text">Category</h1>
+                        <h1 class="text" id="category">Category</h1>
                     </div>
                     <br>
-                    <div class="container">
-                        <div class="border flex">
-                            <h2>NAME</h2>
-                            <button>GOTO</button> 
-                        </div>
+                    <div class="container" id="bet-list">
                     </div>
             
                 <script src="js/jquery.min.js"></script>
