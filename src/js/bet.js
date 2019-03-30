@@ -1,6 +1,6 @@
 $(document).ready(function() {
     countDown("Jan 5, 2021 15:37:25");
-    getMoney(20, 8, 9);
+    getMoney(20, 0, 10);
 });
 
 function countDown(time) {
@@ -36,10 +36,19 @@ var x = setInterval(function() {
 
 function getMoney(totalAmount, yesPeople, noPeople) {
   let amount = 0;
-  if (yesPeople > noPeople) {
+  if (yesPeople == 0 || noPeople == 0) {
+    amount = 1;
+  } else if (yesPeople > noPeople) {
     amount = Math.floor(totalAmount/noPeople * 100) / 100;
+
   } else {
     amount = Math.floor(totalAmount/yesPeople * 100) / 100;
+  }
+  let fixAmount = String(amount).split(".");
+  if (fixAmount.length == 1) {
+    amount += ".00";
+  } else if (fixAmount[1].length == 1) {
+    amount += "0";
   }
   $('#money').text('$' + amount);
 }
