@@ -58,3 +58,7 @@
   }
   
   .button:hover {opacity: 1}
+
+  .title {
+    font-family: Impact;
+  }

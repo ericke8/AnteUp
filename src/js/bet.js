@@ -1,6 +1,17 @@
 $(document).ready(function() {
     countDown("Jan 5, 2021 15:37:25");
-    getMoney(20, 0, 10);
+    getMoney(20, 9, 10);
+
+    $('#yes').click( function() {
+      this.style.display = 'none';
+      $('#no').hide();
+      $('#choice').text("You chose YAY");
+    });
+    $('#no').click( function() {
+      this.style.display = 'none';
+      $('#yes').hide();
+      $('#choice').text("You chose NAY");
+    });
 });
 
 function countDown(time) {
@@ -39,10 +50,10 @@ function getMoney(totalAmount, yesPeople, noPeople) {
   if (yesPeople == 0 || noPeople == 0) {
     amount = 1;
   } else if (yesPeople > noPeople) {
-    amount = Math.floor(totalAmount/noPeople * 100) / 100;
+    amount = Math.floor(totalAmount/(noPeople+1) * 100) / 100;
 
   } else {
-    amount = Math.floor(totalAmount/yesPeople * 100) / 100;
+    amount = Math.floor(totalAmount/(yesPeople+1) * 100) / 100;
   }
   let fixAmount = String(amount).split(".");
   if (fixAmount.length == 1) {
