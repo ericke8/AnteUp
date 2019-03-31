@@ -7,9 +7,9 @@ $(document).ready(function() {
         success: function(result) {
             console.log(result);
             result.forEach(function(bet) {
-                let redirectParam =  '`' + discription + '`, `' + bet.event + '`, `' + bet.question + '`';
+                let redirectParam =  '`' + discription + '`, `' + bet + '`';
                 console.log(redirectParam);
-                $('#bet-list').append('<div class="border flex"><h2>' + bet.event + '</h2><button onclick="redirect('+ redirectParam + ');">BET</button> </div><br>');
+                $('#bet-list').append('<div class="border flex"><h2>' + bet + '</h2><button onclick="redirect('+ redirectParam + ');">BET</button> </div><br>');
             });
         }
     });
@@ -26,6 +26,6 @@ function getQueryVariable(variable) {
     return(false);
 }
 
-function redirect(category, event, question) {
-    document.location.href = '/bet?category=' + category + '&event=' + event + '&question=' + question;
+function redirect(category, event) {
+    document.location.href = '/bet?category=' + category + '&event=' + event;
 }

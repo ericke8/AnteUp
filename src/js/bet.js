@@ -1,33 +1,52 @@
 $(document).ready(function() {
   let category = getQueryVariable('category')
   let event = getQueryVariable('event');
-  let question = getQueryVariable('question');
+  $("#discription").text(event.replace(/%20/g, " "));
   $.ajax({
     type: "GET",
-    url: "http://127.0.0.1:3000/get-bet?category=" + category + "&event=" + event + "&question=" + question,
+    url: "http://127.0.0.1:3000/get-bet?category=" + category + "&event=" + event,
     success: function(result) {
         console.log(result);
-        let discription = getQueryVariable('category').replace(/%20/g, " ");
-        $('#discription').text(discription);
-        countDown(result.expiration);
-        getMoney(parseInt(result.yes) + parseInt(result.no), parseInt(result.yes), parseInt(result.no));
-        let eventName = getQueryVariable('event').replace(/%20/g, " ");
-        $('#event').text(eventName);
-        let questionName = getQueryVariable('question').replace(/%20/g, " ");
-        $('#question').text(questionName);
-    }
-});
+        let count = 1;
+        result.forEach(function(question) {
+          let buttonHTML = '<div class="q' + count + '"><button class="button yes">YAY</button><button class="button no">NAY</button><p class="text title" id="choice"></p></div>'
+          $('#bet').append('<div class="question"><p class="text">' + question.question + '</p>' + buttonHTML + '</div>');
+          count++;
+      });
+      $('.button').click( function() {
+        $(this).parent().children().css("opacity", "0.1");
+        $(this).css("opacity", "1.0");
 
-    $('#yes').click( function() {
-      this.style.display = 'none';
-      $('#no').hide();
-      $('#choice').text("You chose YAY");
-    });
-    $('#no').click( function() {
-      this.style.display = 'none';
-      $('#yes').hide();
-      $('#choice').text("You chose NAY");
-    });
+        if ($(this).hasClass("yes")) {
+          let changeClass= $(this).parent().attr('class');
+          let index = parseInt(changeClass.substring(1))-1;
+          $('.right').children().remove('.' + changeClass);
+          if (!$('.left').children().hasClass(changeClass)) {
+            var innerData = '<p>' + result[index].question + '</p><p id="countdown"></p>';
+            $('.left').append('<div class="text ' + changeClass + '">' + innerData + '</div>');
+
+          } else {
+            $('.left').children().remove('.' + changeClass);
+            $(this).parent().children().css("opacity", "0.6");
+          }
+        }
+        if ($(this).hasClass("no")) {
+          let changeClass= $(this).parent().attr('class');
+          let index = parseInt(changeClass.substring(1))-1;
+          $('.left').children().remove('.' + changeClass);
+          if (!$('.right').children().hasClass(changeClass)) {
+            var innerData = '<p class="text">' + result[index].question + '</p><p id="countdown"></p>';
+            $('.right').append('<div class="text ' + changeClass + '">' + innerData + '</div>');
+
+          } else {
+            $('.right').children().remove('.' + changeClass);
+            $(this).parent().children().css("opacity", "0.6");
+          }
+        }
+      });
+    }
+  });
+
 });
 
 function getQueryVariable(variable) {
