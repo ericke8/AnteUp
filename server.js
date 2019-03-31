@@ -20,7 +20,7 @@ var contests = {
     Pro: []
 }
 
-export const users = [
+const users = [
     {
         uid: 103790650806667,
         name: 'Eric Ke',
