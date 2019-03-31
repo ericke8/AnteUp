@@ -23,7 +23,7 @@ $(document).ready(function() {
           $('.right').children().remove('.' + changeClass);
           if (!$('.left').children().hasClass(changeClass)) {
             var innerData = '<p>' + result[index].question + '</p><p id="countdown"></p>';
-            $('.left').append('<div class="' + changeClass + '">' + innerData + '</div>');
+            $('.left').append('<div class="text ' + changeClass + '">' + innerData + '</div>');
 
           }
         }
@@ -33,7 +33,7 @@ $(document).ready(function() {
           $('.left').children().remove('.' + changeClass);
           if (!$('.right').children().hasClass(changeClass)) {
             var innerData = '<p>' + result[index].question + '</p><p id="countdown"></p>';
-            $('.right').append('<div class="' + changeClass + '">' + innerData + '</div>');
+            $('.right').append('<div class="text ' + changeClass + '">' + innerData + '</div>');
 
           }
         }
