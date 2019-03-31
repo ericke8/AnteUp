@@ -12,7 +12,9 @@ $(document).ready(function() {
           countDown(result[0].expiration);
         }
         result.forEach(function(question) {
-          let buttonHTML = '<div class="q' + count + '"><button class="button yes">YAY</button><button class="button no">NAY</button><p class="text title" id="choice"></p></div>'
+          let yea = Math.floor(Math.random() * 101);
+          let no = 100 - yea;
+          let buttonHTML = '<div class="q' + count + '"><button class="button yes">YAY<br><p class="percent">' + String(yea) + '%</p></button><button class="button no">NAY<br><p class="percent">' + String(no) + '%</p></button></div>'
           $('#bet').append('<div class="question"><p class="text">' + question.question + '</p>' + buttonHTML + '</div>');
           count++;
       });
