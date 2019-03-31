@@ -29,11 +29,23 @@
     text-align:center;
     background-color: cornflowerblue;
     color: white;
+    justify-content: space-evenly;
 }
 #container > div {
     width: calc(100% / 8);  
     display: inline-block;
-    vertical-align: top;   
+    vertical-align: center;   
     text-align:center;
     margin:2%;    
+}
+
+a:hover{
+    color: azure;
+    background-color: blueviolet;
+    display: inline-block;
+    vertical-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
