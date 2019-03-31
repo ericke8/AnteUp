@@ -20,6 +20,23 @@ var contests = {
     Pro: []
 }
 
+export const users = [
+    {
+        uid: 103790650806667,
+        name: 'Eric Ke',
+        bets: [
+            {
+                bet_num: 0000,
+                bet_name: 'Jon Snow die Y',
+                bet_date: '31.3.2019',
+                bet_pay: 'Pending'
+            }
+        ],
+        money: 100
+    }
+]
+
+
 function handleRoot(req, res) {
     res.sendFile(path.join(__dirname + '/src/index.html'));
 }
