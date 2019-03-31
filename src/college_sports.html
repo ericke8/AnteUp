@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/bet.js"></script>
+        <script src="js/college_sports.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +13,7 @@
 
     <meta name="description" content="Low stakes betting for sports, tv shows, and more!">
     <meta name="author" content="LA Hacks 2019 Project!">
-
+    <link href="css/bet.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -58,46 +61,81 @@
 
     <div id="container">
         <div>
+            <a href="?category=College&event=Basketball">
             <h2>
                 <img src="img/basketball_white.png" width=75px>
             </h2>
             <p>
                 NCAAM Basketball
             </p>
+        </a>
         </div>
         <div>
+            <a href="?category=College&event=Football">
             <h2>
                 <img src="img/rugby-balls_white.png" width=75px>
             </h2>
             <p>
                 NCAAM Football
             </p>
+        </a>
         </div>
         <div>
+            <a href="?category=College&event=Baseball">
             <h2>
                 <img src="img/baseball_white.png" width=75px>
             </h2>
             <p>
                 NCAAM Baseball
             </p>
+            </a>
         </div>
         <div>
+            <a href="?category=College&event=Hockey">
             <h2>
                 <img src="img/hockey_white.png" width=75px>
             </h2>
             <p>
                 NCAAM Hockey
             </p>
+        </a>
         </div>
         <div>
+            <a href="?category=College&event=Othersports">
             <h2>
                 <img src="img/more_white.png" width=75px>
             </h2>
             <p>
                 All Other Sports
             </p>
+            </a>
         </div>
     </div>
+
+
+    <div class="container">
+            <div class="column left" style="background-color:rgba(42, 98, 201, 0.5);">
+              <h2 class="text title">YAY</h2>
+            </div>
+    
+            <div class="column middle" style="background-color:#bbb;">
+              <h1 class="text title">Bet</h1>
+              <p class="text title" id="discription">Discription</p>
+              <br>
+              <p class="text">Time Left:</p>
+              <p id="countdown" class="text"></p>
+              <br>
+              <div class="bet" id="bet">
+                  
+              </div>
+            </div>
+    
+            <div class="column right" style="background-color:rgba(209, 17, 17, 0.5);">
+              <h2 class="text title">NAY</h2>
+            </div>
+    
+          </div>
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
