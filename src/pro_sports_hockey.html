@@ -10,7 +10,9 @@
 
     <meta name="description" content="Low stakes betting for sports, tv shows, and more!">
     <meta name="author" content="LA Hacks 2019 Project!">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bet.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bet.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
@@ -67,7 +69,7 @@
             <div>
                 <ul>
     
-                    <a class="nav-link" href="pro_sports_basketball.html" style="color:white">
+                    <a class="nav-link" href="pro_sports_basketball.html?category=Pro&event=Basketball" style="color:white">
                         <p>
                             <img src="img/basketball_white.png" width=75px alt="Basketball">
                         </p>
@@ -78,7 +80,7 @@
     
             </div>
             <div>
-                <a class="nav-link" href="pro_sports_baseball.html" style="color:white">
+                <a class="nav-link" href="pro_sports_baseball.html?category=Pro&event=Baseball" style="color:white">
                     <p>
                         <img src="img/baseball_white.png" width=75px alt="Baseball">
                     </p>
@@ -88,7 +90,7 @@
                 </a>
             </div>
             <div>
-                <a class="nav-link" href="pro_sports_football.html" style="color:white">
+                <a class="nav-link" href="pro_sports_football.html?category=Pro&event=Football" style="color:white">
                     <p>
                         <img src="img/rugby-balls_white.png" width=75px alt="Football">
                     </p>
@@ -99,7 +101,7 @@
             </div>
     
             <div>
-                <a class="nav-link" href="pro_sports_hockey.html" style="color:white">
+                <a class="nav-link" href="pro_sports_hockey.html?category=Pro&event=Hockey" style="color:white">
                     <p>
                         <img src="img/hockey_white.png" width=75px alt="NHL">
                     </p>
@@ -109,7 +111,7 @@
                 </a>
             </div>
             <div>
-                <a class="nav-link" href="pro_sports_othersports.html" style="color:white">
+                <a class="nav-link" href="pro_sports_othersports.html?category=Pro&event=Othersports" style="color:white">
                     <p>
                         <img src="img/more_white.png" width=75px alt="Other Sports">
                     </p>
@@ -118,7 +120,31 @@
                     </p>
                 </a>
             </div>
-            </ul>
+        </div>
+
+
+        <div class="container">
+                <div class="column left" style="background-color:rgba(42, 98, 201, 0.5);">
+                  <h2 class="text title">YAY</h2>
+                </div>
+        
+                <div class="column middle" style="background-color:#bbb;">
+                  <h1 class="text title">Bet</h1>
+                  <p class="text title" id="discription">Discription</p>
+                  <br>
+                  <p class="text">Time Left:</p>
+                  <p id="countdown" class="text"></p>
+                  <br>
+                  <div class="bet" id="bet">
+                      
+                  </div>
+                </div>
+        
+                <div class="column right" style="background-color:rgba(209, 17, 17, 0.5);">
+                  <h2 class="text title">NAY</h2>
+                </div>
+        
+              </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
