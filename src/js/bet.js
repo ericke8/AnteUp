@@ -25,6 +25,9 @@ $(document).ready(function() {
             var innerData = '<p>' + result[index].question + '</p><p id="countdown"></p>';
             $('.left').append('<div class="text ' + changeClass + '">' + innerData + '</div>');
 
+          } else {
+            $('.left').children().remove('.' + changeClass);
+            $(this).parent().children().css("opacity", "0.6");
           }
         }
         if ($(this).hasClass("no")) {
@@ -32,9 +35,12 @@ $(document).ready(function() {
           let index = parseInt(changeClass.substring(1))-1;
           $('.left').children().remove('.' + changeClass);
           if (!$('.right').children().hasClass(changeClass)) {
-            var innerData = '<p>' + result[index].question + '</p><p id="countdown"></p>';
+            var innerData = '<p class="text">' + result[index].question + '</p><p id="countdown"></p>';
             $('.right').append('<div class="text ' + changeClass + '">' + innerData + '</div>');
 
+          } else {
+            $('.right').children().remove('.' + changeClass);
+            $(this).parent().children().css("opacity", "0.6");
           }
         }
       });
