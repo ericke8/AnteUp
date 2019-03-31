@@ -8,6 +8,9 @@ $(document).ready(function() {
     success: function(result) {
         console.log(result);
         let count = 1;
+        if (result.length != 0) {
+          countDown(result[0].expiration);
+        }
         result.forEach(function(question) {
           let buttonHTML = '<div class="q' + count + '"><button class="button yes">YAY</button><button class="button no">NAY</button><p class="text title" id="choice"></p></div>'
           $('#bet').append('<div class="question"><p class="text">' + question.question + '</p>' + buttonHTML + '</div>');
@@ -22,7 +25,7 @@ $(document).ready(function() {
           let index = parseInt(changeClass.substring(1))-1;
           $('.right').children().remove('.' + changeClass);
           if (!$('.left').children().hasClass(changeClass)) {
-            var innerData = '<p>' + result[index].question + '</p><p id="countdown"></p>';
+            var innerData = '<p>' + result[index].question + '</p>';
             $('.left').append('<div class="text ' + changeClass + '">' + innerData + '</div>');
 
           } else {
@@ -35,7 +38,7 @@ $(document).ready(function() {
           let index = parseInt(changeClass.substring(1))-1;
           $('.left').children().remove('.' + changeClass);
           if (!$('.right').children().hasClass(changeClass)) {
-            var innerData = '<p class="text">' + result[index].question + '</p><p id="countdown"></p>';
+            var innerData = '<p class="text">' + result[index].question + '</p>';
             $('.right').append('<div class="text ' + changeClass + '">' + innerData + '</div>');
 
           } else {
