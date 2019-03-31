@@ -29,11 +29,25 @@
     text-align:center;
     background-color: cornflowerblue;
     color: white;
+    justify-content: space-evenly;
 }
 #container > div {
     width: calc(100% / 8);  
     display: inline-block;
-    vertical-align: top;   
+    vertical-align: center;   
     text-align:center;
     margin:2%;    
 }
+
+#buttonDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #paypal-button {
+    padding: 10px 20px;
+    font-size: 36px;
+    border-radius: 10px;
+    width:75%; 
+  }
