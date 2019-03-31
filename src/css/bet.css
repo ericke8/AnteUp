@@ -47,12 +47,12 @@
     text-align: center;
   }
 
-  #yes {
+  .yes {
     background-color: #254dcf;
 
   }
 
-  #no {
+  .no {
     background-color: #f4511e;
 
   }
@@ -61,4 +61,18 @@
 
   .title {
     font-family: Impact;
+  }
+
+  .bet {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    border: 2px solid black;
+  }
+
+  .question {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
   }
